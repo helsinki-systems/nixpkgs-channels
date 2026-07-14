@@ -6,7 +6,6 @@
   pkg-config,
   cmake,
   ninja,
-  clang,
   python3,
   qtshadertools,
   tdlib,
@@ -66,8 +65,6 @@ stdenv.mkDerivation (finalAttrs: {
     qtshadertools
   ]
   ++ lib.optionals stdenv.hostPlatform.isLinux [
-    # to build bundled libdispatch
-    clang
     gobject-introspection
   ];
 

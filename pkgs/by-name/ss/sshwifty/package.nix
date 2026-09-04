@@ -1,6 +1,6 @@
 {
   lib,
-  buildGoModule,
+  buildGoLatestModule,
   fetchFromGitHub,
   fetchNpmDeps,
   nodejs,
@@ -9,7 +9,9 @@
   nixosTests,
   nix-update-script,
 }:
-buildGoModule (finalAttrs: {
+# Upstream updates regularly bump the minimum required Go version,
+# so let's build using the latest Go available in nixpkgs.
+buildGoLatestModule (finalAttrs: {
   pname = "sshwifty";
   version = "0.4.8-beta-release";
 

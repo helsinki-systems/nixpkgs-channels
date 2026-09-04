@@ -125,18 +125,21 @@ stdenv.mkDerivation (finalAttrs: {
 
   passthru.updateScript = nix-update-script { };
 
-  # The desktop item properties should be kept in sync with data from upstream:
   desktopItems = [
     (makeDesktopItem {
       name = "vikunja-desktop";
-      exec = executableName;
-      icon = "vikunja";
+      exec = "${executableName} %U";
+      icon = "vikunja-desktop";
+      terminal = false;
       desktopName = "Vikunja Desktop";
       genericName = "To-Do list app";
       comment = finalAttrs.meta.description;
       categories = [
         "ProjectManagement"
         "Office"
+      ];
+      mimeTypes = [
+        "x-scheme-handler/vikunja-desktop"
       ];
     })
   ];

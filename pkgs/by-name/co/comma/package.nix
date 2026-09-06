@@ -64,15 +64,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
         --bash <(${emulator} $out/bin/comma --print-completions bash) \
         --fish <(${emulator} $out/bin/comma --print-completions fish) \
         --zsh <(${emulator} $out/bin/comma --print-completions zsh)
-
-      # TODO: Add , to other shells too
-      cat >>$out/share/zsh/site-functions/_comma <<'EOF'
-        if [ "$funcstack[1]" = "_comma" ]; then
-            _comma "$@"
-        else
-            compdef _comma ,
-        fi
-      EOF
     '';
 
   nativeInstallCheckInputs = [ versionCheckHook ];

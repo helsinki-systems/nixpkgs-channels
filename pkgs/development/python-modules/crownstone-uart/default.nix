@@ -7,15 +7,17 @@
   setuptools,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "crownstone-uart";
   version = "2.7.0";
   pyproject = true;
 
+  __structuredAttrs = true;
+
   src = fetchFromGitHub {
     owner = "crownstone";
     repo = "crownstone-lib-python-uart";
-    rev = version;
+    tag = finalAttrs.version;
     hash = "sha256-Sc6BCIRbf1+GraTScmV4EAgwtSE/JXNe0f2XhKyACIY=";
   };
 
@@ -37,4 +39,4 @@ buildPythonPackage rec {
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
   };
-}
+})

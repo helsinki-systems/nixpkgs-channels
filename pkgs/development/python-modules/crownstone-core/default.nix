@@ -2,6 +2,7 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
+  setuptools,
   pyaes,
   pytestCheckHook,
 }:
@@ -9,7 +10,7 @@
 buildPythonPackage rec {
   pname = "crownstone-core";
   version = "3.2.1";
-  format = "setuptools";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "crownstone";
@@ -18,7 +19,9 @@ buildPythonPackage rec {
     hash = "sha256-zrlCzx7N3aUcTUNa64jSzDdWgQneX+Hc5n8TTTcZ4ck=";
   };
 
-  propagatedBuildInputs = [ pyaes ];
+  build-system = [ setuptools ];
+
+  dependencies = [ pyaes ];
 
   nativeCheckInputs = [ pytestCheckHook ];
 

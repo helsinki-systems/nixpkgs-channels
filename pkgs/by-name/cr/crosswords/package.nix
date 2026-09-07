@@ -45,6 +45,10 @@ stdenv.mkDerivation (finalAttrs: {
     libipuz
   ];
 
+  mesonFlags = [
+    (lib.mesonBool "development" false)
+  ];
+
   postInstall = ''
     substituteInPlace $out/share/thumbnailers/crosswords.thumbnailer \
       --replace-fail "TryExec=crosswords-thumbnailer" "TryExec=$out/bin/crosswords-thumbnailer" \

@@ -3,6 +3,7 @@
   stdenv,
   buildPythonPackage,
   fetchFromGitHub,
+  setuptools,
   pytest-cov-stub,
   pytest-django,
   pytest-xdist,
@@ -12,7 +13,7 @@
 buildPythonPackage rec {
   pname = "diskcache";
   version = "5.6.3";
-  format = "setuptools";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "grantjenks";
@@ -20,6 +21,8 @@ buildPythonPackage rec {
     rev = "v${version}";
     hash = "sha256-1cDpdf+rLaG14TDd1wEHAiYXb69NFTFeOHD1Ib1oOVY=";
   };
+
+  build-system = [ setuptools ];
 
   nativeCheckInputs = [
     pytest-cov-stub

@@ -5609,6 +5609,8 @@ self: super: with self; {
 
   esp-idf-size = callPackage ../development/python-modules/esp-idf-size { };
 
+  esp-pylib = callPackage ../development/python-modules/esp-pylib { };
+
   espeak-phonemizer = callPackage ../development/python-modules/espeak-phonemizer { };
 
   esper = callPackage ../development/python-modules/esper { };

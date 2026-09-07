@@ -2,6 +2,7 @@
   lib,
   fetchPypi,
   buildPythonPackage,
+  setuptools,
   mergedict,
   pytestCheckHook,
 }:
@@ -9,14 +10,16 @@
 buildPythonPackage rec {
   pname = "configclass";
   version = "0.2.0";
-  format = "setuptools";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
     hash = "sha256-aoDKBuDxJCeXbVwCXhse6FCbDDM30/Xa8p9qRvDkWBk=";
   };
 
-  propagatedBuildInputs = [ mergedict ];
+  build-system = [ setuptools ];
+
+  dependencies = [ mergedict ];
 
   nativeCheckInputs = [ pytestCheckHook ];
 

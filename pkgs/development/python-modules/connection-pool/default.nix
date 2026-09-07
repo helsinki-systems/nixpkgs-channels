@@ -2,13 +2,14 @@
   lib,
   buildPythonPackage,
   fetchPypi,
+  setuptools,
   isPy3k,
 }:
 
 buildPythonPackage rec {
   pname = "connection-pool";
   version = "0.0.3";
-  format = "setuptools";
+  pyproject = true;
   disabled = !isPy3k;
 
   src = fetchPypi {
@@ -16,6 +17,8 @@ buildPythonPackage rec {
     inherit version;
     sha256 = "bf429e7aef65921c69b4ed48f3d48d3eac1383b05d2df91884705842d974d0dc";
   };
+
+  build-system = [ setuptools ];
 
   doCheck = false; # no tests
   pythonImportsCheck = [ "connection_pool" ];

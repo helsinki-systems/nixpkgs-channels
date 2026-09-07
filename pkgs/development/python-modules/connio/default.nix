@@ -2,6 +2,7 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
+  setuptools,
   serialio,
   sockio,
 }:
@@ -9,7 +10,7 @@
 buildPythonPackage rec {
   pname = "connio";
   version = "0.2.0";
-  format = "setuptools";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "tiagocoutinho";
@@ -18,7 +19,9 @@ buildPythonPackage rec {
     hash = "sha256-fPM7Ya69t0jpZhKM2MTk6BwjvoW3a8SV3k000LB9Ypo=";
   };
 
-  propagatedBuildInputs = [
+  build-system = [ setuptools ];
+
+  dependencies = [
     serialio
     sockio
   ];

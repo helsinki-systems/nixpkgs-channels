@@ -10,15 +10,17 @@
   pytestCheckHook,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "diskcache";
   version = "5.6.3";
   pyproject = true;
 
+  __structuredAttrs = true;
+
   src = fetchFromGitHub {
     owner = "grantjenks";
     repo = "python-diskcache";
-    rev = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-1cDpdf+rLaG14TDd1wEHAiYXb69NFTFeOHD1Ib1oOVY=";
   };
 
@@ -51,4 +53,4 @@ buildPythonPackage rec {
     license = lib.licenses.asl20;
     maintainers = [ ];
   };
-}
+})

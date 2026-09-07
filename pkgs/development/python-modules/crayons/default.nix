@@ -2,20 +2,23 @@
   lib,
   fetchPypi,
   buildPythonPackage,
+  setuptools,
   colorama,
 }:
 
 buildPythonPackage rec {
   pname = "crayons";
   version = "0.4.0";
-  format = "setuptools";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
     sha256 = "bd33b7547800f2cfbd26b38431f9e64b487a7de74a947b0fafc89b45a601813f";
   };
 
-  propagatedBuildInputs = [ colorama ];
+  build-system = [ setuptools ];
+
+  dependencies = [ colorama ];
 
   meta = {
     description = "TextUI colors for Python";

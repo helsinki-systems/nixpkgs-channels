@@ -51,6 +51,9 @@ stdenv.mkDerivation (finalAttrs: {
     wayland
   ];
 
+  __structuredAttrs = true;
+  strictDeps = true;
+
   preFixup =
     let
       gpu-screen-recorder-wrapped = gpu-screen-recorder.override {

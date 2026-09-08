@@ -58,7 +58,6 @@ buildGoModule (finalAttrs: {
     mv "$out/bin/tsgo" "$lib_dir/tsc"
 
     ln -s "$lib_dir/tsc" "$out/bin/tsc"
-    ln -s "$lib_dir/tsc" "$out/bin/tsgo"
   '';
 
   nativeInstallCheckInputs = [

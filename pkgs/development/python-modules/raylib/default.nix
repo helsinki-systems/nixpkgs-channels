@@ -15,7 +15,7 @@
 }:
 
 buildPythonPackage (finalAttrs: {
-  pname = "raylib-python-cffi";
+  pname = "raylib";
   version = "6.0.1.0";
   pyproject = true;
 
@@ -51,7 +51,7 @@ buildPythonPackage (finalAttrs: {
 
   passthru.tests = import ./passthru-tests.nix {
     inherit writers;
-    raylib-python-cffi = finalAttrs.finalPackage;
+    raylib = finalAttrs.finalPackage;
   };
 
   meta = {

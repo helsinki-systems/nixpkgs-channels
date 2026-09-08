@@ -2155,6 +2155,20 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  boolean-toggle-nvim = buildVimPlugin {
+    pname = "boolean-toggle.nvim";
+    version = "0.5.0-1";
+    src = fetchFromGitHub {
+      owner = "DrKJeff16";
+      repo = "boolean-toggle.nvim";
+      tag = "v0.5.0-1";
+      hash = "sha256-93ppL2JP2K+lfeCtJG0R8YW6cLk8JJrPa5RAGKnzOlE=";
+    };
+    meta.homepage = "https://github.com/DrKJeff16/boolean-toggle.nvim/";
+    meta.license = getLicenseFromSpdxId "GPL-2.0-only";
+    meta.hydraPlatforms = [ ];
+  };
+
   bracey-vim = buildVimPlugin {
     pname = "bracey.vim";
     version = "0-unstable-2021-08-20";

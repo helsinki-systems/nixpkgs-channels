@@ -16288,6 +16288,10 @@ self: super: with self; {
 
   pystray = callPackage ../development/python-modules/pystray { };
 
+  pystrich = callPackage ../development/python-modules/pystrich {
+    inherit (pkgs) ghostscript;
+  };
+
   pysubs2 = callPackage ../development/python-modules/pysubs2 { };
 
   pysuezv2 = callPackage ../development/python-modules/pysuezv2 { };
@@ -17740,7 +17744,7 @@ self: super: with self; {
 
   ray = callPackage ../development/python-modules/ray { };
 
-  raylib-python-cffi = callPackage ../development/python-modules/raylib-python-cffi { };
+  raylib = callPackage ../development/python-modules/raylib { inherit (pkgs) raylib; };
 
   razdel = callPackage ../development/python-modules/razdel { };
 

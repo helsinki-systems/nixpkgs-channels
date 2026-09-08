@@ -4,10 +4,7 @@
   fetchFromGitHub,
   gnum4,
   pam,
-  fscrypt-experimental,
 }:
-
-# Don't use this for anything important yet!
 
 buildGoModule rec {
   pname = "fscrypt";
@@ -28,6 +25,7 @@ buildGoModule rec {
 
   vendorHash = "sha256-lR3qcRSVQjxyBuqHv5warfVVJy5zdomfE0DEJbA/RkQ=";
 
+  __structuredAttrs = true;
   doCheck = false;
 
   nativeBuildInputs = [ gnum4 ];

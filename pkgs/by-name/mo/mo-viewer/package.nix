@@ -15,13 +15,13 @@
 
 buildGoModule (finalAttrs: {
   pname = "mo-viewer";
-  version = "1.6.7";
+  version = "1.6.8";
 
   src = fetchFromGitHub {
     owner = "k1LoW";
     repo = "mo";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-8A3km3N9pGm/gBvIxManVgBV5opMZIoNR/JE93gX5yk=";
+    hash = "sha256-aam8kDxZfNXJyGeyj4ZtDRLcZ9mPVKNHnHfVFFkv/Ro=";
   };
 
   frontend = stdenvNoCC.mkDerivation (finalFrontendAttrs: {
@@ -35,7 +35,7 @@ buildGoModule (finalAttrs: {
       sourceRoot = "${finalFrontendAttrs.src.name}/internal/frontend";
       pnpm = pnpm_10;
       fetcherVersion = 4;
-      hash = "sha256-tjeDH6wiA3KjUyhpQfvrSsXqSRf1bOOA0vPfkUR8Kvc=";
+      hash = "sha256-jvTMP8XKUpanM2CQVX/cZr2sqMt6Zgh1JKJhaCeGKt4=";
     };
 
     nativeBuildInputs = [
@@ -63,7 +63,7 @@ buildGoModule (finalAttrs: {
     '';
   });
 
-  vendorHash = "sha256-gaw85ILGr3iDWZ8ibRAA7l+UROCaItDBauCVtbZNa0U=";
+  vendorHash = "sha256-9LXhQUTsk0+UCtXWMFsE4aGG+2MSOyM+U6dlWw+0G+c=";
 
   preBuild = ''
     cp -r ${finalAttrs.frontend} internal/static/dist

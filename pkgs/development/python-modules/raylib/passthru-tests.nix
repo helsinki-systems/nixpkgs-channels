@@ -1,13 +1,13 @@
 {
-  raylib-python-cffi,
+  raylib,
   writers,
 }:
 let
-  src = raylib-python-cffi.src;
+  src = raylib.src;
   writeTest =
     name: path:
     writers.writePython3Bin name {
-      libraries = [ raylib-python-cffi ];
+      libraries = [ raylib ];
       doCheck = false;
     } (builtins.readFile (src + path));
 

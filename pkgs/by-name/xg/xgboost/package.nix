@@ -14,7 +14,7 @@
   llvmPackages,
   R,
   rPackages,
-}@inputs:
+}:
 
 assert ncclSupport -> (cudaSupport && cudaPackages.nccl.meta.available);
 # Disable regular tests when building the R package
@@ -28,9 +28,7 @@ let
   # This ensures xgboost gets the correct libstdc++ when
   # built with cuda support. This may be removed once
   # #226165 rewrites cudaStdenv
-  effectiveStdenv = if cudaSupport then cudaPackages.backendStdenv else inputs.stdenv;
-  # Ensures we don't use the stdenv value by accident.
-  stdenv = throw "Use effectiveStdenv instead of stdenv in xgboost derivation.";
+  effectiveStdenv = if cudaSupport then cudaPackages.backendStdenv else stdenv;
 in
 
 effectiveStdenv.mkDerivation (finalAttrs: {
@@ -88,16 +86,17 @@ effectiveStdenv.mkDerivation (finalAttrs: {
   ];
 
   cmakeFlags =
-    lib.optionals doCheck [ "-DGOOGLE_TEST=ON" ]
+    lib.optionals doCheck [ (lib.cmakeBool "GOOGLE_TEST" true) ]
     ++ lib.optionals cudaSupport [
-      "-DUSE_CUDA=ON"
+      (lib.cmakeBool "USE_CUDA" true)
       # Their CMakeLists.txt does not respect CUDA_HOST_COMPILER, instead using the CXX compiler.
       # https://github.com/dmlc/xgboost/blob/ccf43d4ba0a94e2f0a3cc5a526197539ae46f410/CMakeLists.txt#L145
-      "-DCMAKE_C_COMPILER=${effectiveStdenv.cc}/bin/gcc"
-      "-DCMAKE_CXX_COMPILER=${effectiveStdenv.cc}/bin/g++"
+      (lib.cmakeFeature "CMAKE_C_COMPILER" "${effectiveStdenv.cc}/bin/gcc")
+      (lib.cmakeFeature "CMAKE_CXX_COMPILER" "${effectiveStdenv.cc}/bin/g++")
+      (lib.cmakeFeature "CMAKE_CUDA_ARCHITECTURES" cudaPackages.flags.cmakeCudaArchitecturesString)
     ]
-    ++ lib.optionals ncclSupport [ "-DUSE_NCCL=ON" ]
-    ++ lib.optionals rLibrary [ "-DR_LIB=ON" ];
+    ++ lib.optionals ncclSupport [ (lib.cmakeBool "USE_NCCL" true) ]
+    ++ lib.optionals rLibrary [ (lib.cmakeBool "R_LIB" true) ];
 
   preConfigure = lib.optionalString rLibrary ''
     substituteInPlace cmake/RPackageInstall.cmake.in --replace "CMD INSTALL" "CMD INSTALL -l $out/library"
@@ -113,7 +112,7 @@ effectiveStdenv.mkDerivation (finalAttrs: {
   '';
 
   env = {
-    # on Darwin, cmake uses find_library to locate R instead of using the PATH
+    # on Darwin, cmake uses find_libraryto locate R instead of using the PATH
     NIX_LDFLAGS = lib.optionalString rLibrary "-L${R}/lib/R/lib";
 
     # Disable finicky tests from dmlc core that fail in Hydra. XGboost team

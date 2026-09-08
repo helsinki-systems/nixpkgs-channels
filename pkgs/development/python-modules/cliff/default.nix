@@ -3,7 +3,7 @@
   buildPythonPackage,
   fetchPypi,
   autopage,
-  cmd2,
+  cmd2_4,
   openstackdocstheme,
   pbr,
   prettytable,
@@ -33,7 +33,7 @@ buildPythonPackage rec {
 
   dependencies = [
     autopage
-    cmd2
+    cmd2_4
     prettytable
     pyyaml
     stevedore

@@ -9,7 +9,6 @@
   pnpm_11,
   fetchPnpmDeps,
   pnpmConfigHook,
-  typescript_7,
   versionCheckHook,
 }:
 buildGo126Module (finalAttrs: {
@@ -30,7 +29,6 @@ buildGo126Module (finalAttrs: {
       nodejs
       pnpmConfigHook
       pnpm_11
-      typescript_7
     ];
 
     sourceRoot = "${finalAttrs.src.name}/web";

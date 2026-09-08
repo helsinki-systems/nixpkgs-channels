@@ -8375,7 +8375,6 @@ with pkgs;
 
   docker-gc = callPackage ../applications/virtualization/docker/gc.nix { };
   docker-buildx = callPackage ../applications/virtualization/docker/buildx.nix { };
-  docker-sbom = callPackage ../applications/virtualization/docker/sbom.nix { };
 
   drawpile-server-headless = drawpile.override {
     buildClient = false;

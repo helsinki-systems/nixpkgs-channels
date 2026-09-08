@@ -23,7 +23,6 @@
   xdp-tools,
   fstrm,
   protobufc,
-  sphinx,
   autoreconfHook,
   tzdata,
   nixosTests,
@@ -63,12 +62,10 @@ stdenv.mkDerivation (finalAttrs: {
     ./runtime-deps.patch
   ];
 
-  # FIXME: sphinx is needed for now to get man-pages
   nativeBuildInputs = [
     pkg-config
     protobufc # dnstap support
     autoreconfHook
-    sphinx
     tzdata # tests/contrib/test_time
   ];
   buildInputs = [

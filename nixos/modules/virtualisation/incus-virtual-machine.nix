@@ -61,7 +61,8 @@ in
             Type = "esp";
             Format = "vfat";
             Label = "ESP";
-            SizeMinBytes = "256M";
+            # support 10 kernels, assuming 50MB on x86 and 100MB on aarch64
+            SizeMinBytes = if pkgs.stdenv.hostPlatform.isx86 then "512M" else "1G";
           };
         };
         root = {

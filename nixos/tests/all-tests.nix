@@ -109,20 +109,7 @@ let
 
     [public]: https://nixos.org/manual/nixos/stable/#sec-call-nixos-test-outside-nixos
   */
-  guestPkgs =
-    if pkgs.stdenv.hostPlatform.isLinux then
-      pkgs
-    else
-      let
-        hostToGuest.aarch64-darwin = "aarch64-linux";
-        guestSystem =
-          hostToGuest.${pkgs.stdenv.hostPlatform.system}
-            or (throw "NixOS tests: don't know which Linux guest system to pair with host system ${pkgs.stdenv.hostPlatform.system}.");
-      in
-      import ../.. {
-        system = guestSystem;
-        inherit (pkgs) config overlays;
-      };
+  inherit (pkgs) pkgsLinux;
 
   evalSystem =
     module:
@@ -130,7 +117,7 @@ let
       system = null;
       modules = [
         ../modules/misc/nixpkgs/read-only.nix
-        { nixpkgs.pkgs = guestPkgs; }
+        { nixpkgs.pkgs = pkgsLinux; }
         module
       ];
     };
@@ -637,7 +624,7 @@ in
     inherit lib runTest;
   };
   esphome = runTest ./esphome.nix;
-  etc = guestPkgs.callPackage ../modules/system/etc/test.nix { inherit evalMinimalConfig; };
+  etc = pkgsLinux.callPackage ../modules/system/etc/test.nix { inherit evalMinimalConfig; };
   etcd = import ./etcd/default.nix { inherit pkgs runTest; };
   etebase-server = runTest ./etebase-server.nix;
   etesync-dav = runTest ./etesync-dav.nix;
@@ -715,11 +702,11 @@ in
   fontconfig-default-fonts = runTest ./fontconfig-default-fonts.nix;
   forgejo = import ./forgejo.nix {
     inherit runTest;
-    forgejoPackage = guestPkgs.forgejo;
+    forgejoPackage = pkgsLinux.forgejo;
   };
   forgejo-lts = import ./forgejo.nix {
     inherit runTest;
-    forgejoPackage = guestPkgs.forgejo-lts;
+    forgejoPackage = pkgsLinux.forgejo-lts;
   };
   freenet = runTest ./freenet.nix;
   freescout = import ./freescout {
@@ -746,11 +733,11 @@ in
   gancio = runTest ./gancio.nix;
   garage_1 = import ./garage {
     inherit runTest;
-    package = guestPkgs.garage_1;
+    package = pkgsLinux.garage_1;
   };
   garage_2 = import ./garage {
     inherit runTest;
-    package = guestPkgs.garage_2;
+    package = pkgsLinux.garage_2;
   };
   gatus = runTest ./gatus.nix;
   gemstash = import ./gemstash.nix { inherit pkgs runTest; };
@@ -764,7 +751,7 @@ in
   git-pages-modular = runTest ./git-pages.nix;
   gitdaemon = runTest ./gitdaemon.nix;
   gitea = import ./gitea.nix {
-    inherit (pkgs) gitea;
+    inherit (pkgsLinux) gitea;
     inherit runTest;
     inherit lib;
   };
@@ -952,7 +939,7 @@ in
   jirafeau = runTest ./jirafeau.nix;
   jitsi-meet = runTest ./jitsi-meet.nix;
   jool = import ./jool.nix {
-    pkgs = guestPkgs;
+    pkgs = pkgsLinux;
     inherit runTest;
   };
   jotta-cli = runTest ./jotta-cli.nix;
@@ -1149,7 +1136,7 @@ in
   mobilizon = runTest ./mobilizon.nix;
   mod_perl = runTest ./mod_perl.nix;
   modular-service-etc = runTest ./modular-service-etc/test.nix;
-  modularService = guestPkgs.callPackage ../modules/system/service/systemd/test.nix {
+  modularService = pkgsLinux.callPackage ../modules/system/service/systemd/test.nix {
     inherit evalSystem;
   };
   moduleStateRevisions = pkgs.callPackage ./moduleStateRevisions.nix { };
@@ -1521,7 +1508,7 @@ in
   postgres-websockets = runTest ./postgres-websockets.nix;
   postgresql = import ./postgresql {
     inherit runTest;
-    pkgs = guestPkgs;
+    pkgs = pkgsLinux;
   };
   postgrest = runTest ./postgrest.nix;
   power-profiles-daemon = runTest ./power-profiles-daemon.nix;
@@ -1794,7 +1781,7 @@ in
         runTest
         callTest
         ;
-      pkgs = guestPkgs;
+      pkgs = pkgsLinux;
     }
   );
   systemd = runTest ./systemd.nix;
@@ -1987,7 +1974,7 @@ in
   v2ray = runTest ./v2ray.nix;
   varnish80 = runTest {
     imports = [ ./varnish.nix ];
-    _module.args.package = guestPkgs.varnish80;
+    _module.args.package = pkgsLinux.varnish80;
   };
   vault = runTest ./vault.nix;
   vault-agent = runTest ./vault-agent.nix;
@@ -2005,7 +1992,7 @@ in
   vikunja = runTest ./vikunja.nix;
   vinyl-cache_9 = runTest {
     imports = [ ./vinyl-cache.nix ];
-    _module.args.package = guestPkgs.vinyl-cache_9;
+    _module.args.package = pkgsLinux.vinyl-cache_9;
   };
   virtualbox = handleTestOn [ "x86_64-linux" ] ./virtualbox.nix { };
   vm-variant = handleTest ./vm-variant.nix { };
@@ -2037,7 +2024,7 @@ in
     inherit (pkgs) lib;
   };
   wireguard = import ./wireguard {
-    pkgs = guestPkgs;
+    pkgs = pkgsLinux;
     inherit runTest lib;
   };
   without-nix = runTest ./without-nix.nix;

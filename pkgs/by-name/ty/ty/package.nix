@@ -97,6 +97,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
     updateScript = nix-update-script { };
   };
 
+  requiredSystemFeatures = [ "big-parallel" ];
+
   meta = {
     description = "Extremely fast Python type checker and language server, written in Rust";
     homepage = "https://github.com/astral-sh/ty";

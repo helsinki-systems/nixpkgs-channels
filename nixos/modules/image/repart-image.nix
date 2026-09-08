@@ -110,6 +110,7 @@ let
     "btrfs" = [ btrfs-progs ];
     "xfs" = [ xfsprogs ];
     "swap" = [ util-linux ];
+    "empty" = [ ];
   };
 
   fileSystemTools = builtins.concatMap (f: fileSystemToolMapping."${f}") fileSystems;

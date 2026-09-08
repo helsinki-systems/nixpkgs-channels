@@ -33,7 +33,7 @@ let
   stdenv = throw "Use effectiveStdenv instead of stdenv in xgboost derivation.";
 in
 
-effectiveStdenv.mkDerivation rec {
+effectiveStdenv.mkDerivation (finalAttrs: {
   pnameBase = "xgboost";
   # prefix with r when building the R library
   # The R package build results in a special xgboost.so file
@@ -50,10 +50,14 @@ effectiveStdenv.mkDerivation rec {
   pname = lib.optionalString rLibrary "r-" + "xgboost";
   version = "3.0.5";
 
+  strictDeps = true;
+  __structuredAttrs = true;
+  __darwinAllowLocalNetworking = true;
+
   src = fetchFromGitHub {
     owner = "dmlc";
     repo = "xgboost";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     fetchSubmodules = true;
     hash = "sha256-khaD9gvKfUyWhkrIZXzGzKw/nfgeTcp9akCi5X3IORo=";
   };
@@ -62,15 +66,20 @@ effectiveStdenv.mkDerivation rec {
     cmake
   ]
   ++ lib.optionals effectiveStdenv.hostPlatform.isDarwin [ llvmPackages.openmp ]
+  ++ lib.optionals cudaSupport [ cudaPackages.cudatoolkit ]
   ++ lib.optionals cudaSupport [ autoAddDriverRunpath ]
   ++ lib.optionals rLibrary [ R ];
 
   buildInputs = [
     gtest
   ]
-  ++ lib.optional cudaSupport cudaPackages.cudatoolkit
-  ++ lib.optional cudaSupport cudaPackages.cuda_cudart
-  ++ lib.optional ncclSupport cudaPackages.nccl;
+  ++ lib.optionals stdenv.cc.isClang [
+    llvmPackages.openmp # 'omp.h' file not found
+  ]
+  ++ lib.optionals cudaSupport [
+    cudaPackages.cuda_cudart # cuda_runtime.h
+  ]
+  ++ lib.optionals ncclSupport [ cudaPackages.nccl ];
 
   propagatedBuildInputs = lib.optionals rLibrary [
     rPackages.data_table
@@ -203,4 +212,4 @@ effectiveStdenv.mkDerivation rec {
       nviets
     ];
   };
-}
+})

@@ -1647,7 +1647,7 @@ in
           SystemCallFilter = [
             "~@cpu-emulation @debug @keyring @mount @obsolete @privileged @setuid"
           ]
-          ++ optional cfg.enableQuicBPF [ "bpf" ];
+          ++ optionals cfg.enableQuicBPF [ "bpf" ];
         };
       };
 

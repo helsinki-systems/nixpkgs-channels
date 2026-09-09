@@ -178,7 +178,10 @@ stdenv.mkDerivation {
     ];
     changelog = "https://github.com/nwjs/nw.js/blob/nw-v${version}/CHANGELOG.md";
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    maintainers = [ lib.maintainers.mikaelfangel ];
+    maintainers = with lib.maintainers; [
+      mikaelfangel
+      eljamm
+    ];
     mainProgram = "nw";
     license = lib.licenses.mit;
   };

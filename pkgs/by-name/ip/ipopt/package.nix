@@ -21,6 +21,9 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "ipopt";
   version = "3.14.19";
 
+  __structuredAttrs = true;
+  srictDeps = true;
+
   src = fetchFromGitHub {
     owner = "coin-or";
     repo = "Ipopt";

@@ -17724,7 +17724,7 @@ self: super: with self; {
 
   rapt-ble = callPackage ../development/python-modules/rapt-ble { };
 
-  rarfile = callPackage ../development/python-modules/rarfile { inherit (pkgs) libarchive; };
+  rarfile = callPackage ../development/python-modules/rarfile { inherit (pkgs) libarchive unrar; };
 
   raspyrfm-client = callPackage ../development/python-modules/raspyrfm-client { };
 
@@ -21949,7 +21949,7 @@ self: super: with self; {
 
   unrar = callPackage ../development/python-modules/unrar { inherit (pkgs) unrar; };
 
-  unrardll = callPackage ../development/python-modules/unrardll { };
+  unrardll = callPackage ../development/python-modules/unrardll { inherit (pkgs) unrar; };
 
   unrpa = callPackage ../development/python-modules/unrpa { };
 

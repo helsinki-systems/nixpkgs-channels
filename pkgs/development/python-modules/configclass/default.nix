@@ -30,6 +30,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python to class to hold configuration values";
     homepage = "https://github.com/schettino72/configclass/";
+    changelog = "https://github.com/schettino72/configclass/blob/${finalAttrs.version}/CHANGES";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ onny ];
   };

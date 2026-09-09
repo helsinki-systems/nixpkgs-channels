@@ -104,6 +104,8 @@ lib.makeScope newScope (self: {
 
   mame2016 = self.callPackage ./cores/mame2016.nix { };
 
+  m2000 = self.callPackage ./cores/m2000.nix { };
+
   melonds = self.callPackage ./cores/melonds.nix { };
 
   melondsds = self.callPackage ./cores/melondsds.nix { };
@@ -188,6 +190,8 @@ lib.makeScope newScope (self: {
   tic80 = self.callPackage ./cores/tic80.nix { };
 
   twenty-fortyeight = self.callPackage ./cores/twenty-fortyeight.nix { };
+
+  uzem = self.callPackage ./cores/uzem.nix { };
 
   vba-m = self.callPackage ./cores/vba-m.nix { };
 

@@ -780,7 +780,9 @@ in
   gotify-server = runTest ./gotify-server.nix;
   gotosocial = runTest ./web-apps/gotosocial.nix;
   goupile = runTest ./web-apps/goupile;
-  grafana = handleTest ./grafana { };
+  grafana = import ./grafana {
+    inherit runTest;
+  };
   grafana-to-ntfy = runTest ./grafana-to-ntfy.nix;
   graphite = runTest ./graphite.nix;
   grav = runTest ./web-apps/grav.nix;
@@ -938,7 +940,9 @@ in
     ];
     rancherDistro = "k3s";
   };
-  kafka = handleTest ./kafka { };
+  kafka = import ./kafka {
+    inherit runTest pkgs;
+  };
   kaidan = runTest ./kaidan;
   kanboard = runTest ./web-apps/kanboard.nix;
   kanidm = runTest ./kanidm.nix;
@@ -2053,6 +2057,7 @@ in
   zammad = runTest ./zammad.nix;
   zapret2 = runTest ./zapret2.nix;
   zenohd = runTest ./zenohd.nix;
+  zerobyte = runTest ./zerobyte.nix;
   zeronet-conservancy = runTest ./zeronet-conservancy.nix;
   zfs = import ./zfs.nix { inherit system pkgs runTest; };
   zigbee2mqtt = runTest ./zigbee2mqtt.nix;

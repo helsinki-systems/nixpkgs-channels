@@ -64,8 +64,10 @@ effectiveStdenv.mkDerivation (finalAttrs: {
     cmake
   ]
   ++ lib.optionals effectiveStdenv.hostPlatform.isDarwin [ llvmPackages.openmp ]
-  ++ lib.optionals cudaSupport [ cudaPackages.cudatoolkit ]
-  ++ lib.optionals cudaSupport [ autoAddDriverRunpath ]
+  ++ lib.optionals cudaSupport [
+    cudaPackages.cuda_nvcc
+    autoAddDriverRunpath
+  ]
   ++ lib.optionals rLibrary [ R ];
 
   buildInputs = [

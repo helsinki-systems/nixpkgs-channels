@@ -2045,12 +2045,12 @@ final: prev: {
 
   blink-lib = buildVimPlugin {
     pname = "blink.lib";
-    version = "0-unstable-2026-08-08";
+    version = "0-unstable-2026-09-07";
     src = fetchFromGitHub {
       owner = "saghen";
       repo = "blink.lib";
-      rev = "c8fdc12c8a2fab6cf786dd7141a283f8079f902b";
-      hash = "sha256-g8t/Esmkln3Xpsb7ln258T+XCvuMHaquct3Nnv0TbvE=";
+      rev = "fd9a48ebbe6ec30d5dfcc5b42c243941ccdca1aa";
+      hash = "sha256-CyDv8bRHjGKpn/qDMaplDBcqwQl73ZPkhjmvzkizF/I=";
     };
     meta.homepage = "https://github.com/saghen/blink.lib/";
     meta.license = getLicenseFromSpdxId "MIT";

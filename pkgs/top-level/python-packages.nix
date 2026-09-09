@@ -3311,6 +3311,8 @@ self: super: with self; {
 
   cmd2-ext-test = callPackage ../development/python-modules/cmd2-ext-test { };
 
+  cmd2_4 = callPackage ../development/python-modules/cmd2_4 { };
+
   cmdline = callPackage ../development/python-modules/cmdline { };
 
   cmdstanpy = callPackage ../development/python-modules/cmdstanpy { };

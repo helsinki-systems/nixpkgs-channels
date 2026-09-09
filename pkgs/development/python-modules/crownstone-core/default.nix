@@ -32,6 +32,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python module with shared classes, util functions and definition of Crownstone";
     homepage = "https://github.com/crownstone/crownstone-lib-python-core";
+    changelog = "https://github.com/crownstone/crownstone-lib-python-core/blob/${finalAttrs.version}/CHANGELOG.md";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
   };

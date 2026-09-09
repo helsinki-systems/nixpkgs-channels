@@ -39,7 +39,7 @@
   xkeyboard_config,
   glib,
   libarchive,
-  libxcrypt,
+  libxcrypt-legacy,
   python3,
   aprutil,
   makeDesktopItem,
@@ -207,7 +207,6 @@ let
             addDriverRunpath "$program"
           fi
         done
-        ln -s $out/libs/libcrypto.so.1.1 $out/libs/libcrypt.so.1
       '';
 
       desktopItems = [
@@ -303,7 +302,7 @@ buildFHSEnv {
       librsvg
       libtool
       libuuid
-      libxcrypt # provides libcrypt.so.1
+      libxcrypt-legacy # provides libcrypt.so.1
       libxkbcommon
       nspr
       ocl-icd

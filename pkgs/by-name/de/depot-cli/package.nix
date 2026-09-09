@@ -13,6 +13,7 @@ buildGoModule (finalAttrs: {
   version = "2.101.73";
 
   __structuredAttrs = true;
+  __darwinAllowLocalNetworking = true;
 
   src = fetchFromGitHub {
     owner = "depot";

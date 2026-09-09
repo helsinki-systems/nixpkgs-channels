@@ -61,6 +61,7 @@ stdenv.mkDerivation (finalAttrs: {
   enableParallelBuilding = true;
 
   meta = {
+    changelog = "https://github.com/coin-or/Ipopt/releases/tag/releases%2F${finalAttrs.version}";
     description = "Software package for large-scale nonlinear optimization";
     homepage = "https://projects.coin-or.org/Ipopt";
     license = lib.licenses.epl20;

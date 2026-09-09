@@ -66,7 +66,10 @@ stdenv.mkDerivation (finalAttrs: {
 
     license = lib.licenses.gpl3Plus;
 
-    maintainers = with lib.maintainers; [ raskin ];
+    maintainers = with lib.maintainers; [
+      booxter
+      raskin
+    ];
     platforms = lib.platforms.gnu ++ lib.platforms.unix;
   };
 })

@@ -94,7 +94,6 @@ let
         homepage = "https://garagehq.deuxfleurs.fr";
         license = lib.licenses.agpl3Only;
         maintainers = with lib.maintainers; [
-          adamcstephens
           nickcao
           _0x4A6F
           teutat3s

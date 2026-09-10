@@ -8,7 +8,7 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "dms-greeter";
-  version = "1.6.0";
+  version = "1.6.1";
 
   __structuredAttrs = true;
   strictDeps = true;
@@ -17,7 +17,7 @@ buildGoModule (finalAttrs: {
     owner = "AvengeMedia";
     repo = "dank-greeter";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-XAd81SHwl7zChwpl+PXjePzV9bejy9e2WataOZJ+ioA=";
+    hash = "sha256-Tt4/VvShpkHNbgXQedAsTzN2GbwIaQj0l9rOjqpRU+M=";
     fetchSubmodules = true;
   };
 

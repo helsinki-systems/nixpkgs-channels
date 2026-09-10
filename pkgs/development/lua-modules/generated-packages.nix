@@ -3586,15 +3586,15 @@ final: prev: {
     }:
     buildLuarocksPackage {
       pname = "luaossl";
-      version = "20250929-0";
+      version = "20260910-0";
       knownRockspec =
         (fetchurl {
-          url = "mirror://luarocks/luaossl-20250929-0.rockspec";
-          sha256 = "11m823vd8cwc3s5420lv042ny1d7hrimzx05ldy8f6rlh6m2d9xl";
+          url = "mirror://luarocks/luaossl-20260910-0.rockspec";
+          sha256 = "0863wkp1j9r3nrv312x4j188kgyryqkbnn2dz351glc69lsni4jg";
         }).outPath;
       src = fetchzip {
-        url = "https://github.com/wahern/luaossl/archive/rel-20250929.zip";
-        sha256 = "115a5r0n7qc9lnjxld551ag6l9rq1wawcbrfjqhz2l6krb3pbv3d";
+        url = "https://github.com/wahern/luaossl/archive/rel-20260910.zip";
+        sha256 = "1q29kdfyxxmn55ld1sw7rhjl0cqkqm7sy1g9ii041jcdkbgbg36y";
       };
 
       meta = {

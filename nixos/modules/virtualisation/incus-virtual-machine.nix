@@ -33,9 +33,16 @@ in
 
     system.build.repartImage = config.image.repart.image.overrideAttrs (previousAttrs: {
       nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [ pkgs.qemu-utils ];
+
       postBuild = ''
         qemu-img convert -f raw -O qcow2 -c ${config.image.baseName}.raw ${config.image.baseName}.qcow2
         rm ${config.image.baseName}.raw
+      '';
+
+      # expose a hydra build product so lxc-ci can download it
+      postInstall = ''
+        mkdir $out/nix-support
+        echo "file qcow2-image $out/${config.image.baseName}.qcow2" > $out/nix-support/hydra-build-products
       '';
     });
 

@@ -7929,12 +7929,12 @@ final: prev: {
 
   indent-blankline-nvim = buildVimPlugin {
     pname = "indent-blankline.nvim";
-    version = "3.10.0";
+    version = "3.10.1";
     src = fetchFromGitHub {
       owner = "lukas-reineke";
       repo = "indent-blankline.nvim";
-      tag = "v3.10.0";
-      hash = "sha256-qc2Wv1VsoVxEurNtEBfoztBOa5SkbWoW4zMX2SMYV0k=";
+      tag = "v3.10.1";
+      hash = "sha256-vVzaXiVgpn/CbgFSXOPHwaTdnKxW9fbI2Sse+BiJczw=";
     };
     meta.homepage = "https://github.com/lukas-reineke/indent-blankline.nvim/";
     meta.license = getLicenseFromSpdxId "MIT";

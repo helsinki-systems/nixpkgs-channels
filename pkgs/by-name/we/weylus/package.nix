@@ -123,6 +123,6 @@ rustPlatform.buildRustPackage {
     mainProgram = "weylus";
     homepage = "https://github.com/H-M-H/Weylus";
     license = lib.licenses.agpl3Only;
-    maintainers = [ ];
+    maintainers = [ lib.maintainers.zainkergaye ];
   };
 }

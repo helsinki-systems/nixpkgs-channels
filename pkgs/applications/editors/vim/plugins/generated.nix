@@ -9174,12 +9174,12 @@ final: prev: {
 
   live-preview-nvim = buildVimPlugin {
     pname = "live-preview.nvim";
-    version = "0.9.6";
+    version = "0.9.7";
     src = fetchFromGitHub {
       owner = "brianhuster";
       repo = "live-preview.nvim";
-      tag = "v0.9.6";
-      hash = "sha256-7EKKcpth1/hW4qgeVQm+6RnG6HKb6wnA1VsBSUO0PEI=";
+      tag = "v0.9.7";
+      hash = "sha256-xyeoz4lEqrinkqY5U4Fu1S2HlmCyXiNQ2l2+AJFozIc=";
     };
     meta.homepage = "https://github.com/brianhuster/live-preview.nvim/";
     meta.license = getLicenseFromSpdxId "GPL-3.0-only";

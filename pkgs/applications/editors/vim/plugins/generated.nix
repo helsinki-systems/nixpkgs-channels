@@ -1093,12 +1093,12 @@ final: prev: {
 
   astrolsp = buildVimPlugin {
     pname = "astrolsp";
-    version = "4.0.1";
+    version = "4.0.3";
     src = fetchFromGitHub {
       owner = "AstroNvim";
       repo = "astrolsp";
-      tag = "v4.0.1";
-      hash = "sha256-blKHK0dxMS1cW+8bk8wyWGmigLWkp2sl7wzxA5AW3tg=";
+      tag = "v4.0.3";
+      hash = "sha256-CRE85a4WFcb6R7TtAvsHoaQfGUJT28jdRLWPAzFs/GU=";
     };
     meta.homepage = "https://github.com/AstroNvim/astrolsp/";
     meta.license = getLicenseFromSpdxId "GPL-3.0-only";

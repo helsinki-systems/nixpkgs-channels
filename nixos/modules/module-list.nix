@@ -130,6 +130,7 @@
   ./hardware/video/virtualbox.nix
   ./hardware/video/webcam/facetimehd.nix
   ./hardware/video/webcam/ipu6.nix
+  ./hardware/video/webcam/ipu7.nix
   ./hardware/wooting.nix
   ./hardware/xone.nix
   ./hardware/xpad-noone.nix
@@ -871,6 +872,7 @@
   ./services/misc/cgminer.nix
   ./services/misc/clipcat.nix
   ./services/misc/clipmenu.nix
+  ./services/misc/cliproxyapi.nix
   ./services/misc/comfyui.nix
   ./services/misc/confd.nix
   ./services/misc/conman.nix
@@ -1243,7 +1245,6 @@
   ./services/networking/firezone/relay.nix
   ./services/networking/firezone/server.nix
   ./services/networking/flannel.nix
-  ./services/networking/freenet.nix
   ./services/networking/freeradius.nix
   ./services/networking/frp.nix
   ./services/networking/frr.nix
@@ -1272,6 +1273,7 @@
   ./services/networking/htpdate.nix
   ./services/networking/https-dns-proxy.nix
   ./services/networking/hylafax/default.nix
+  ./services/networking/hyphanet.nix
   ./services/networking/i2p.nix
   ./services/networking/i2pd.nix
   ./services/networking/icecream/daemon.nix

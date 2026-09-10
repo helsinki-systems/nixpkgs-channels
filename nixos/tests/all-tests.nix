@@ -709,7 +709,6 @@ in
     inherit runTest;
     forgejoPackage = pkgsLinux.forgejo-lts;
   };
-  freenet = runTest ./freenet.nix;
   freescout = import ./freescout {
     inherit runTest;
   };
@@ -880,6 +879,7 @@ in
   hound = runTest ./hound.nix;
   hub = runTest ./git/hub.nix;
   hydra = runTest ./hydra;
+  hyphanet = runTest ./hyphanet.nix;
   i18n = runTest ./i18n.nix;
   i2pd = runTest ./i2pd.nix;
   i3wm = runTest ./i3wm.nix;

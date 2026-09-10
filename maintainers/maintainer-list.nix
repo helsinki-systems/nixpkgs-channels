@@ -25324,6 +25324,14 @@
     github = "Ruixi-rebirth";
     githubId = 75824585;
   };
+  RumBugen = {
+    name = "Vladislav Wanner";
+    email = "vladislavwanner@gmail.com";
+    github = "RumBugen";
+    githubId = 43646118;
+    matrix = "@rumbugen:matrix.org";
+    keys = [ { fingerprint = "305D 2271 3C43 2E52 FB86  7C64 6107 6951 3194 1931"; } ];
+  };
   rumpelsepp = {
     name = "Stefan Tatschner";
     email = "stefan@rumpelsepp.org";

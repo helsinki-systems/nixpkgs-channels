@@ -335,8 +335,8 @@ in
       "sha256-3JYcWKFk0dKJg/qn+EBvxeAO5xh5PXCU3dTEWDr1oXI=";
 
   mypy-boto3-connect =
-    buildMypyBoto3Package "connect" "1.43.90"
-      "sha256-ZSHl8XWgtoLUsOea/9s1MOAfdOladZ9ceYO8rpQE4iY=";
+    buildMypyBoto3Package "connect" "1.43.91"
+      "sha256-PaYz2Zs2V9nVbCicx2Q951HCY8cCSHH3SmGiq6VdGp0=";
 
   mypy-boto3-connect-contact-lens =
     buildMypyBoto3Package "connect-contact-lens" "1.43.79"
@@ -443,8 +443,8 @@ in
       "sha256-dXNkOcMonYrBh4yzeubd+v3mW42s9XpmpfvgbtgoJgY=";
 
   mypy-boto3-ec2 =
-    buildMypyBoto3Package "ec2" "1.43.90"
-      "sha256-jItOMQR7/SAAcFYyyI94V+5RKqvafvtcI+NFDqr8NIU=";
+    buildMypyBoto3Package "ec2" "1.43.91"
+      "sha256-GguLkbl+JT7gcBMWkFH6qM48m3Ls+DH+b67/S+EunbQ=";
 
   mypy-boto3-ec2-instance-connect =
     buildMypyBoto3Package "ec2-instance-connect" "1.43.0"
@@ -766,8 +766,8 @@ in
       "sha256-gYTCgaRwH3zKi6gg4MC8DUwXQT+jZO6lqc/vi+JUahU=";
 
   mypy-boto3-lambda =
-    buildMypyBoto3Package "lambda" "1.43.86"
-      "sha256-izGEfjbs9na8nsDO79EUBRaCF28opTMqMcXCuSA9KbE=";
+    buildMypyBoto3Package "lambda" "1.43.91"
+      "sha256-kKhXFOzfQeWpNqecJripsu26D5iDnUUx56mwKffk68E=";
 
   mypy-boto3-lex-models =
     buildMypyBoto3Package "lex-models" "1.43.3"
@@ -862,8 +862,8 @@ in
       "sha256-y1tuFi8DkMioVdO+YVoE4Bp23d8p8Ta9XkauKMF1dEU=";
 
   mypy-boto3-medialive =
-    buildMypyBoto3Package "medialive" "1.43.87"
-      "sha256-kh7MPWYuuu6Khc3dDGUHsSuWXl4NI9TCUIF5msIfPJk=";
+    buildMypyBoto3Package "medialive" "1.43.91"
+      "sha256-a8jhEDGchC0sa2l8owFj/6BdFO4rOkDdOkreKke2Yfk=";
 
   mypy-boto3-mediapackage =
     buildMypyBoto3Package "mediapackage" "1.43.0"
@@ -874,8 +874,8 @@ in
       "sha256-5AqWiNGz9jemWb8dZkuGQXxPXIruMdDWcoRzbT+ZGro=";
 
   mypy-boto3-mediapackagev2 =
-    buildMypyBoto3Package "mediapackagev2" "1.43.67"
-      "sha256-zgO/4TSdGI7TDa1diqAQ7S56T/G7vON5HoTcIxSv/sE=";
+    buildMypyBoto3Package "mediapackagev2" "1.43.91"
+      "sha256-oXUKMgfuoA2ZC2NWpsktfzvOYCBFFuc0AeBl9pS2Wc8=";
 
   mypy-boto3-mediastore =
     buildMypyBoto3Package "mediastore" "1.43.0"
@@ -886,8 +886,8 @@ in
       "sha256-8K0Xm6PMo+daS6xt4kBqaVvO2/LruFV7PVvugI7sNDU=";
 
   mypy-boto3-mediatailor =
-    buildMypyBoto3Package "mediatailor" "1.43.89"
-      "sha256-K3D0CyrJxS4P6avsEq33xhlpp6Tl/mjEiVl46r6aKBc=";
+    buildMypyBoto3Package "mediatailor" "1.43.91"
+      "sha256-qF1kQg21OoQo5jP1D0+TODszZA6fS8bY6brXZ69/skI=";
 
   mypy-boto3-medical-imaging =
     buildMypyBoto3Package "medical-imaging" "1.43.4"

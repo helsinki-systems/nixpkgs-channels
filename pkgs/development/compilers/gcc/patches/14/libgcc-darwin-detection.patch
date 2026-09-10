@@ -7,7 +7,8 @@ index 7332903704..27a8b5bedb 100644
    tmake_file="$tmake_file t-slibgcc-darwin"
    case ${host} in
 -    *-*-darwin2*)
+-      tmake_file="t-darwin-min-11 $tmake_file"
 +    *-*-darwin2* | *-*-darwin)
-       tmake_file="t-darwin-min-11 $tmake_file"
++      tmake_file="t-darwin-min-11 t-darwin-libgccs1 $tmake_file"
        ;;
      *-*-darwin1[89]*)

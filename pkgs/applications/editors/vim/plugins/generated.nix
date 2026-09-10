@@ -14587,12 +14587,12 @@ final: prev: {
 
   onedarkpro-nvim = buildVimPlugin {
     pname = "onedarkpro.nvim";
-    version = "2.28.0-unstable-2026-08-17";
+    version = "2.29.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "onedarkpro.nvim";
-      rev = "ef009ae60769935a4eced9b3d545ae6013d3d271";
-      hash = "sha256-vjxemHkNBQ6boXLl63BULREuLb3K/k8P5nu14I49Syg=";
+      tag = "v2.29.0";
+      hash = "sha256-toBEmNxaNKdQRFyim6vl4YeR15ago5ZF4FFaT8FHh/k=";
     };
     meta.homepage = "https://github.com/olimorris/onedarkpro.nvim/";
     meta.license = getLicenseFromSpdxId "MIT";

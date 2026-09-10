@@ -3,9 +3,7 @@
   buildPythonPackage,
   fetchPypi,
   pytestCheckHook,
-  setuptools,
   setuptools-scm,
-  wheel,
 }:
 
 buildPythonPackage rec {
@@ -18,10 +16,8 @@ buildPythonPackage rec {
     hash = "sha256-rhfpLx1srA5n02fgf7C6iiPayPGT/F16jIpQ/l3dlaQ=";
   };
 
-  nativeBuildInputs = [
-    setuptools
+  build-system = [
     setuptools-scm
-    wheel
   ];
 
   preCheck = "export PATH=$PATH:$out/bin";

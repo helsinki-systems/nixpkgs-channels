@@ -4,6 +4,9 @@
   buildPythonPackage,
   fetchFromGitHub,
 
+  # build-system
+  setuptools,
+
   # dependencies
   google-generativeai,
   huggingface-hub,
@@ -40,6 +43,10 @@ buildPythonPackage (finalAttrs: {
     tag = "v${finalAttrs.version}";
     hash = "sha256-qZoyeUaRsatWUiFoL1VaRqApjM/AFS8xqTjVBcUpYas=";
   };
+
+  build-system = [
+    setuptools
+  ];
 
   dependencies = [
     google-generativeai

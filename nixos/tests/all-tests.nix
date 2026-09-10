@@ -437,6 +437,7 @@ in
     inherit runTest;
     package = pkgs.clickhouse-lts;
   };
+  cliproxyapi = runTest ./cliproxyapi.nix;
   cloud-init = runTest ./cloud-init.nix;
   cloud-init-hostname = runTest ./cloud-init-hostname.nix;
   cloudcompare = import ./cloudcompare.nix { inherit pkgs runTest; };
@@ -709,7 +710,6 @@ in
     inherit runTest;
     forgejoPackage = pkgsLinux.forgejo-lts;
   };
-  freenet = runTest ./freenet.nix;
   freescout = import ./freescout {
     inherit runTest;
   };
@@ -878,6 +878,7 @@ in
   hound = runTest ./hound.nix;
   hub = runTest ./git/hub.nix;
   hydra = runTest ./hydra;
+  hyphanet = runTest ./hyphanet.nix;
   i18n = runTest ./i18n.nix;
   i2pd = runTest ./i2pd.nix;
   i3wm = runTest ./i3wm.nix;

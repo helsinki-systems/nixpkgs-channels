@@ -12717,7 +12717,7 @@ final: prev: {
 
   nvim-dap = buildVimPlugin {
     pname = "nvim-dap";
-    version = "0-unstable-2026-09-01";
+    version = "0.10.0-unstable-2026-09-01";
     src = fetchgit {
       url = "https://codeberg.org/mfussenegger/nvim-dap/";
       rev = "c9a0738e45f1bd41d792a126941348dce661cf9b";
@@ -13300,7 +13300,7 @@ final: prev: {
 
   nvim-lint = buildVimPlugin {
     pname = "nvim-lint";
-    version = "05-unstable-2026-08-25";
+    version = "0-unstable-2026-08-25";
     src = fetchgit {
       url = "https://codeberg.org/mfussenegger/nvim-lint/";
       rev = "3d55c8f67c6ae5c15e1042571e107c7a3d5c5f4e";
@@ -24219,7 +24219,7 @@ final: prev: {
 
   vim-solarized8 = buildVimPlugin {
     pname = "vim-solarized8";
-    version = "0-unstable-2026-06-11";
+    version = "1.6.4-unstable-2026-06-11";
     src = fetchgit {
       url = "https://codeberg.org/lifepillar/vim-solarized8/";
       rev = "1cb22c68158a3e27cf5943052a4bd36c3dd4151c";

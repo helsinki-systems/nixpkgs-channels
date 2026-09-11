@@ -5,7 +5,6 @@
   ncurses,
   libuuid,
   pkg-config,
-  wrapQtAppsHook,
   libjpeg,
   zlib,
   libewf-legacy,
@@ -14,16 +13,12 @@
   enableExtFs ? !stdenv.hostPlatform.isDarwin,
   e2fsprogs ? null,
   enableQt ? false,
-  qtbase ? null,
-  qttools ? null,
-  qwt ? null,
+  qt5,
+  libsForQt5,
 }:
 
 assert enableNtfs -> ntfs3g != null;
 assert enableExtFs -> e2fsprogs != null;
-assert enableQt -> qtbase != null;
-assert enableQt -> qttools != null;
-assert enableQt -> qwt != null;
 
 stdenv.mkDerivation rec {
   pname = "testdisk";
@@ -50,15 +45,15 @@ stdenv.mkDerivation rec {
   ++ lib.optional enableNtfs ntfs3g
   ++ lib.optional enableExtFs e2fsprogs
   ++ lib.optionals enableQt [
-    qtbase
-    qttools
-    qwt
+    qt5.qtbase
+    qt5.qttools
+    libsForQt5.qwt
   ];
 
   nativeBuildInputs = [
     pkg-config
   ]
-  ++ lib.optional enableQt wrapQtAppsHook;
+  ++ lib.optional enableQt qt5.wrapQtAppsHook;
 
   env.NIX_CFLAGS_COMPILE = "-Wno-unused";
 

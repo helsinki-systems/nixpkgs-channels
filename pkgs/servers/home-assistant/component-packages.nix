@@ -6275,7 +6275,8 @@
       ];
     "scorpiontrack" =
       ps: with ps; [
-      ]; # missing inputs: pyscorpiontrack
+        pyscorpiontrack
+      ];
     "scrape" =
       ps: with ps; [
         beautifulsoup4
@@ -9221,6 +9222,7 @@
     "scene"
     "schedule"
     "schlage"
+    "scorpiontrack"
     "scrape"
     "screenlogic"
     "script"

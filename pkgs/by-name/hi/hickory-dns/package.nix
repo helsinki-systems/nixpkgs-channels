@@ -3,6 +3,7 @@
   fetchFromGitHub,
   lib,
   nix-update-script,
+  nixosTests,
   rustPlatform,
   versionCheckHook,
 }:
@@ -80,7 +81,12 @@ rustPlatform.buildRustPackage (finalAttrs: {
     substituteInPlace crates/resolver/src/lib.rs --replace-fail '//! ```rust' '//! ```rust,no_run'
   '';
 
-  passthru.updateScript = nix-update-script { };
+  passthru = {
+    tests = {
+      inherit (nixosTests) hickory-dns;
+    };
+    updateScript = nix-update-script { };
+  };
 
   meta = {
     description = "Rust based DNS client, server, and resolver";

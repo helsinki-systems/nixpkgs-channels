@@ -68,7 +68,7 @@ let
       # Required, otherwise the fixed-output derivation references store paths.
       dontFixup = true;
 
-      outputHash = "sha256-4fMmwxknyj2jwDyooT3WAzHXW2J5uxi6LsHdOoFte0k=";
+      outputHash = "sha256-GHLJ04D+f7uzWhFDxWVP++XGF2tPziMcfYrgaz2oQL8=";
       outputHashAlgo = "sha256";
       outputHashMode = "recursive";
     };

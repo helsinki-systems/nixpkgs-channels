@@ -10277,12 +10277,6 @@ with pkgs;
     trilinos = trilinos-mpi;
   };
 
-  ### SCIENCE / MATH
-
-  gap-minimal = lowPrio (gap.override { packageSet = "minimal"; });
-
-  gap-full = lowPrio (gap.override { packageSet = "full"; });
-
   ### SCIENCE / MISC
 
   boinc-headless = boinc.override { headless = true; };

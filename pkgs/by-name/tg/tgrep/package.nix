@@ -10,7 +10,7 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "tgrep";
-  version = "1.0.7";
+  version = "1.0.8";
   __structuredAttrs = true;
   __darwinAllowLocalNetworking = true;
 
@@ -18,10 +18,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
     owner = "microsoft";
     repo = "tgrep";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-A00mKwTnhYVxGmzQ11o05iTWJ0XCctHNXBQiDl4Y9RM=";
+    hash = "sha256-WAlrYrnTNfPUi+0Lz6BggKSXK2LfQm9P/JmNFt9/fWw=";
   };
 
-  cargoHash = "sha256-/nQcPXQvhdexhUflzFUpiZmGMMnnr35l4N0d11RjitM=";
+  cargoHash = "sha256-+RNHcj3wRjOzl8uPlDa+aexbjbFbC6dWctUdXzttGcU=";
 
   doInstallCheck = true;
   nativeInstallCheckInputs = [ versionCheckHook ];

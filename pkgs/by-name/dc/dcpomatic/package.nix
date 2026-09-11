@@ -17,7 +17,7 @@
   libzip,
   bzip2,
   fontconfig,
-  pangomm,
+  pangomm_1_4,
   libxmlxx,
   libssh,
   xmlsec,
@@ -73,7 +73,7 @@ stdenv.mkDerivation (finalAttrs: {
     glib
     libzip
     bzip2
-    pangomm
+    pangomm_1_4
     leqm-nrt
     libttf
     libcxml

@@ -10932,7 +10932,9 @@ self: super: with self; {
 
   mkdocs-backlinks = callPackage ../development/python-modules/mkdocs-backlinks { };
 
-  mkdocs-build-plantuml = callPackage ../development/python-modules/mkdocs-build-plantuml { };
+  mkdocs-build-plantuml-plugin =
+    callPackage ../development/python-modules/mkdocs-build-plantuml-plugin
+      { };
 
   mkdocs-callouts = callPackage ../development/python-modules/mkdocs-callouts { };
 

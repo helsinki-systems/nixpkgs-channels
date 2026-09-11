@@ -2,11 +2,15 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  versionCheckHook,
 }:
 
 buildGoModule (finalAttrs: {
   pname = "saucectl";
   version = "0.214.0";
+
+  __darwinAllowLocalNetworking = true;
+  __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "saucelabs";
@@ -23,6 +27,9 @@ buildGoModule (finalAttrs: {
   vendorHash = "sha256-931KJUQq/eSqssDKJa5mL33TLBwBFbz4DT1RDZIiC9Y=";
 
   checkFlags = [ "-skip=^TestNewRequestWithContext$" ];
+
+  nativeInstallCheckInputs = [ versionCheckHook ];
+  doInstallCheck = true;
 
   meta = {
     description = "Command line interface for the Sauce Labs platform";

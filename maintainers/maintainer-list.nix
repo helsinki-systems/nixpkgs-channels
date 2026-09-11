@@ -10411,7 +10411,7 @@
   };
   gibbert = {
     email = "gbjgms@gmail.com";
-    github = "zgibberish";
+    github = "2gibbert";
     githubId = 67570424;
     name = "gibbert";
   };

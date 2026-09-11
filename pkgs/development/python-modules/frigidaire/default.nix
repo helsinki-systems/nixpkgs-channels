@@ -1,15 +1,11 @@
 {
   lib,
   buildPythonPackage,
-  certifi,
-  chardet,
   fetchFromGitHub,
-  idna,
   pytestCheckHook,
   requests,
   responses,
   setuptools,
-  urllib3,
 }:
 
 buildPythonPackage (finalAttrs: {
@@ -29,15 +25,9 @@ buildPythonPackage (finalAttrs: {
       --replace-fail 'version = "0.0.0-dev"' 'version = "${finalAttrs.version}"'
   '';
 
-  nativeBuildInputs = [ setuptools ];
+  build-system = [ setuptools ];
 
-  propagatedBuildInputs = [
-    certifi
-    chardet
-    idna
-    requests
-    urllib3
-  ];
+  dependencies = [ requests ];
 
   nativeCheckInputs = [
     pytestCheckHook

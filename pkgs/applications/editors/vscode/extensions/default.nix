@@ -4045,8 +4045,8 @@ let
           publisher = "rocq-prover";
           name = "vsrocq";
           # When updating the version here, also update the language server vsrocq-language-server
-          version = "2.4.3";
-          hash = "sha256-o9rsSDCDYRWZQBMDA7DtWay50tBI76kw7H7CivrZpKo=";
+          version = "2.5.0";
+          hash = "sha256-05YrIKtZRmEjs+QSzsCyIxajRmSLgoCkNUDti+w97Fw=";
         };
         meta = {
           description = "VsRocq is an extension for Visual Studio Code with support for the Rocq Prover";

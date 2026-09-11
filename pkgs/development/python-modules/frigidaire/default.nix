@@ -5,7 +5,9 @@
   chardet,
   fetchFromGitHub,
   idna,
+  pytestCheckHook,
   requests,
+  responses,
   setuptools,
   urllib3,
 }:
@@ -37,8 +39,10 @@ buildPythonPackage (finalAttrs: {
     urllib3
   ];
 
-  # Project has no tests
-  doCheck = false;
+  nativeCheckInputs = [
+    pytestCheckHook
+    responses
+  ];
 
   pythonImportsCheck = [ "frigidaire" ];
 

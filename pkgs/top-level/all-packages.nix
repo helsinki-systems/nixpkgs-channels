@@ -2957,8 +2957,6 @@ with pkgs;
     callPackage ../development/tools/continuous-integration/woodpecker/server.nix
       { };
 
-  testdisk = libsForQt5.callPackage ../tools/system/testdisk { };
-
   testdisk-qt = testdisk.override { enableQt = true; };
 
   tweet-hs = haskell.lib.compose.justStaticExecutables haskellPackages.tweet-hs;

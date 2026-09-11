@@ -11,14 +11,14 @@
 
 buildPythonPackage rec {
   pname = "openhomedevice";
-  version = "2.3.1";
+  version = "2.6";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "bazwilliams";
     repo = "openhomedevice";
     tag = version;
-    hash = "sha256-u05aciRFCnqMJRClUMApAPDLpXOKn4wUTLgvR7BVZTA=";
+    hash = "sha256-vAOPsoZoDrsl2KQeZHlh0UC1ay3nnkdfk05xMkpsp3A=";
   };
 
   build-system = [ setuptools ];

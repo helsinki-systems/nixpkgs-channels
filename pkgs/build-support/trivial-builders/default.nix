@@ -109,9 +109,7 @@ rec {
 
     extendDrvArgs =
       let
-        defaultPassAsFile = [ "text" ];
         removedDerivationNames = [
-          "passAsFile"
           "meta"
           "passthru"
         ];
@@ -150,7 +148,9 @@ rec {
               Ensure that the path starts with a / and specifies at least the filename.
             '';
           destination;
-        passAsFile = defaultPassAsFile ++ derivationArgs.passAsFile or [ ];
+
+        __structuredAttrs = true;
+        strictDeps = true;
 
         buildCommand = ''
           target=$out$destination

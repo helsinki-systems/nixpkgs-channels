@@ -11,10 +11,12 @@ buildGoModule (finalAttrs: {
   pname = "databricks-cli";
   version = "1.16.0";
 
+  __structuredAttrs = true;
+
   src = fetchFromGitHub {
     owner = "databricks";
     repo = "cli";
-    rev = "v${finalAttrs.version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-zb+hKKMscCOX4yJBwLmBFln5FFZIiwvZPf/80kP21g4=";
   };
 

@@ -19,5 +19,11 @@ stdenvNoCC.mkDerivation {
   meta = {
     description = "TrueType versions of the Computer Modern and AMS TeX Fonts";
     homepage = "https://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma/ttf/";
+    license = {
+      shortName = "bakoma-fonts";
+      fullName = "BaKoMa Fonts Licence";
+      free = true;
+      redistributable = true;
+    };
   };
 }

@@ -320,6 +320,8 @@ self: super: with self; {
 
   aiohappyeyeballs = callPackage ../development/python-modules/aiohappyeyeballs { };
 
+  aioharmanluxury = callPackage ../development/python-modules/aioharmanluxury { };
+
   aioharmony = callPackage ../development/python-modules/aioharmony { };
 
   aiohasupervisor = callPackage ../development/python-modules/aiohasupervisor { };
@@ -333,6 +335,8 @@ self: super: with self; {
   aiohomematic-config = callPackage ../development/python-modules/aiohomematic-config { };
 
   aiohomematic-test-support = callPackage ../development/python-modules/aiohomematic-test-support { };
+
+  aiohortos = callPackage ../development/python-modules/aiohortos { };
 
   aiohttp = callPackage ../development/python-modules/aiohttp { };
 
@@ -397,6 +401,8 @@ self: super: with self; {
   aiojobs = callPackage ../development/python-modules/aiojobs { };
 
   aiokafka = callPackage ../development/python-modules/aiokafka { };
+
+  aiokarakeep = callPackage ../development/python-modules/aiokarakeep { };
 
   aiokef = callPackage ../development/python-modules/aiokef { };
 
@@ -473,6 +479,8 @@ self: super: with self; {
   aioprocessing = callPackage ../development/python-modules/aioprocessing { };
 
   aioprometheus = callPackage ../development/python-modules/aioprometheus { };
+
+  aioptdevices = callPackage ../development/python-modules/aioptdevices { };
 
   aiopulse = callPackage ../development/python-modules/aiopulse { };
 
@@ -2528,6 +2536,8 @@ self: super: with self; {
   block-io = callPackage ../development/python-modules/block-io { };
 
   blockbuster = callPackage ../development/python-modules/blockbuster { };
+
+  blockchain = callPackage ../development/python-modules/blockchain { };
 
   blockdiag = callPackage ../development/python-modules/blockdiag { };
 
@@ -7487,6 +7497,8 @@ self: super: with self; {
 
   hap-python = callPackage ../development/python-modules/hap-python { };
 
+  harbor-python = callPackage ../development/python-modules/harbor-python { };
+
   harlequin-bigquery = callPackage ../development/python-modules/harlequin-bigquery { };
 
   harlequin-postgres = callPackage ../development/python-modules/harlequin-postgres { };
@@ -10338,6 +10350,8 @@ self: super: with self; {
 
   lxst = callPackage ../development/python-modules/lxst { };
 
+  lyngdorf = callPackage ../development/python-modules/lyngdorf { };
+
   lyricwikia = callPackage ../development/python-modules/lyricwikia { };
 
   lz4 = callPackage ../development/python-modules/lz4 { };
@@ -11904,6 +11918,8 @@ self: super: with self; {
   neo = callPackage ../development/python-modules/neo { };
 
   neo4j = callPackage ../development/python-modules/neo4j { };
+
+  neopool-modbus = callPackage ../development/python-modules/neopool-modbus { };
 
   neoteroi-mkdocs = callPackage ../development/python-modules/neoteroi-mkdocs { };
 
@@ -16061,6 +16077,8 @@ self: super: with self; {
   pyschemes = callPackage ../development/python-modules/pyschemes { };
 
   pyschlage = callPackage ../development/python-modules/pyschlage { };
+
+  pyscorpiontrack = callPackage ../development/python-modules/pyscorpiontrack { };
 
   pyscreenshot = callPackage ../development/python-modules/pyscreenshot { };
 

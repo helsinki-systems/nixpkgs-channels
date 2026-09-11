@@ -8,15 +8,15 @@
   mkdocs,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "mkdocs-build-plantuml";
   version = "2.1.0";
-  pyproject = true;
+  format = "setuptools";
 
   src = fetchFromGitHub {
     owner = "christo-ph";
     repo = "mkdocs_build_plantuml";
-    tag = version;
+    tag = finalAttrs.version;
     hash = "sha256-KTtZXeMZwbrx1M6Keu9BzT3GmarsVx9kEmn63rwHatI=";
   };
 
@@ -42,6 +42,6 @@ buildPythonPackage rec {
     description = "MkDocs plugin to help generate your plantuml images locally or remotely as files (NOT inline)";
     homepage = "https://github.com/christo-ph/mkdocs_build_plantuml";
     license = lib.licenses.mit;
-    maintainers = [ ];
+    maintainers = with lib.maintainers; [ drupol ];
   };
-}
+})

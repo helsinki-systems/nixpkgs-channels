@@ -2924,7 +2924,8 @@
       ];
     "hortimax" =
       ps: with ps; [
-      ]; # missing inputs: aiohortos
+        aiohortos
+      ];
     "hotspring" =
       ps: with ps; [
         python-hotspring
@@ -8756,6 +8757,7 @@
     "homeworks"
     "honeywell"
     "honeywell_string_lights"
+    "hortimax"
     "hotspring"
     "hr_energy_qube"
     "html5"

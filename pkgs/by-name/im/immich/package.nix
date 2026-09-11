@@ -245,6 +245,7 @@ stdenv.mkDerivation (finalAttrs: {
       cc-by-40 # geonames
     ];
     maintainers = with lib.maintainers; [
+      diogotcorreia
       dotlambda
       jvanbruegge
       Scrumplex

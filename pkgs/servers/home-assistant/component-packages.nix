@@ -4145,7 +4145,8 @@
       ps: with ps; [
         async-upnp-client
         ifaddr
-      ]; # missing inputs: lyngdorf
+        lyngdorf
+      ];
     "lyric" =
       ps: with ps; [
         aiolyric
@@ -8912,6 +8913,7 @@
     "lupusec"
     "lutron"
     "lutron_caseta"
+    "lyngdorf"
     "lyric"
     "madvr"
     "mailgun"

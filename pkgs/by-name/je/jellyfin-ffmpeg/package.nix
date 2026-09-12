@@ -18,8 +18,14 @@ in
   };
   buildFfplay = false; # requires SDL2 which gets disabled
   buildFfprobe = true; # required by various programs like Immich
-  withSamba = false; # samba is rather big and unused
+
+  # dependencies with big closure sizes that are not enabled by upstream in
+  # https://github.com/jellyfin/jellyfin-ffmpeg/tree/jellyfin/builder/scripts.d
+  withFrei0r = false;
+  withRav1e = false;
+  withSamba = false;
   withSdl2 = false;
+  withWhisper = false;
 }).overrideAttrs
   (old: {
     pname = "jellyfin-ffmpeg";

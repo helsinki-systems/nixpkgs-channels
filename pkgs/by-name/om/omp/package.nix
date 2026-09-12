@@ -91,7 +91,7 @@ stdenv.mkDerivation (finalAttrs: {
     # Prevents breaking symlinks in node_modules
     dontFixup = true;
 
-    outputHash = "sha256-wqfKptBYo7GENPQLz3BfZ/m9i5lhng6yYjWbz7L6NNw=";
+    outputHash = "sha256-d6ygla6moNBSB6tB8tfQ35lrpB65IJRiMGqaTpw++gc=";
     outputHashMode = "recursive";
   };
 

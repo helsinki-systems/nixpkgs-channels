@@ -30,6 +30,8 @@ buildPythonPackage rec {
     plasTeX
   ];
 
+  pythonImportsCheck = [ "plastexdepgraph" ];
+
   meta = {
     description = "PlasTeX plugin allowing to build dependency graphs";
     homepage = "https://github.com/PatrickMassot/plastexdepgraph";

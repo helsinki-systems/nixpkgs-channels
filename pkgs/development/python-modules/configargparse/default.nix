@@ -11,14 +11,14 @@
 
 buildPythonPackage rec {
   pname = "configargparse";
-  version = "1.7.5";
+  version = "1.7.7";
   format = "setuptools";
 
   src = fetchFromGitHub {
     owner = "bw2";
     repo = "ConfigArgParse";
     tag = "v${version}";
-    hash = "sha256-ZRdwA3X1TCv0BIwr1gFeSi6UuziXiazciKw/6ewkpRE=";
+    hash = "sha256-s1QkHTU36Kj+XK8dNiEXAxZrW2oDPISai056V+B4eog=";
   };
 
   build-system = [

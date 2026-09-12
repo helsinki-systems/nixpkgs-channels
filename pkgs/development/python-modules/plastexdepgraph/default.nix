@@ -10,7 +10,8 @@
   pygraphviz,
   plasTeX,
 }:
-buildPythonPackage {
+
+buildPythonPackage rec {
   pname = "plastexdepgraph";
   version = "0.0.5";
   pyproject = true;
@@ -18,8 +19,8 @@ buildPythonPackage {
   src = fetchFromGitHub {
     repo = "plastexdepgraph";
     owner = "PatrickMassot";
-    rev = "0.0.4";
-    hash = "sha256-Q13uYYZe1QgZHS4Nj8ugr+Fmhva98ttJj3AlXTK6XDw=";
+    tag = version;
+    hash = "sha256-GOTQmcWrmEZ2DkAMcE1ZknLOyVorGC87+qhO8jxcGJ4=";
   };
 
   build-system = [ setuptools ];

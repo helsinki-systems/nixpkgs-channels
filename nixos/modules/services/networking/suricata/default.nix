@@ -165,6 +165,14 @@ in
         These can be raw SID numbers or something like "group:emerging-coinminer.rules".
       '';
     };
+    reloadOnRulesetUpdate = mkOption {
+      type = types.bool;
+      default = false;
+      description = ''
+        Whether to reload Suricata if it is running after an automated ruleset update.
+        This is a blocking reload, and may take some time depending on the number of rules and computational power of the host.
+      '';
+    };
   };
 
   config =
@@ -226,11 +234,20 @@ in
       };
 
       systemd.services = {
+        suricata-blocking-reload = lib.mkIf cfg.reloadOnRulesetUpdate {
+          description = "Refresh Runtime Suricata Ruleset";
+          serviceConfig = {
+            Type = "oneshot";
+            ExecCondition = "systemctl is-active --quiet suricata.service";
+            ExecStart = "${pkg}/bin/suricatasc -c reload-rules";
+          };
+        };
         suricata-update = {
           description = "Update Suricata Rules";
           wantedBy = [ "multi-user.target" ];
           wants = [ "network-online.target" ];
           after = [ "network-online.target" ];
+          onSuccess = lib.mkIf cfg.reloadOnRulesetUpdate [ "suricata-blocking-reload.service" ];
 
           script =
             let

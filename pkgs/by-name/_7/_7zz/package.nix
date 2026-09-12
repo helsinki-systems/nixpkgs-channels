@@ -132,7 +132,7 @@ stdenv.mkDerivation (finalAttrs: {
   preBuild = "cd CPP/7zip/Bundles/Alone2";
 
   postBuild = ''
-    make $makeFlags -j $NIX_BUILD_CORES -C ../Format7zF -f ../../cmpl_gcc.mak
+    make $makeFlags -j $NIX_BUILD_CORES -C ../Format7zF -f ${makefile}
   '';
 
   installPhase = ''
@@ -142,7 +142,7 @@ stdenv.mkDerivation (finalAttrs: {
     install -Dm444 -t $out/share/doc/7zz ../../../../DOC/*.txt
 
     mkdir -p $lib/lib
-    install -Dm555 -t $lib/lib ../Format7zF/b/g/*
+    install -Dm555 -t $lib/lib ../Format7zF/b/*/7z.*
 
     runHook postInstall
   '';

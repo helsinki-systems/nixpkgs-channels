@@ -974,7 +974,9 @@ in
   keepalived = discoverTests (import ./keepalived.nix);
   keepassxc = runTest ./keepassxc.nix;
   kener = runTest ./kener.nix;
-  kerberos = handleTest ./kerberos/default.nix { };
+  kerberos = import ./kerberos/default.nix {
+    inherit pkgs runTest;
+  };
   kernel-generic = handleTest ./kernel-generic { };
   kernel-latest-ath-user-regd = runTest ./kernel-latest-ath-user-regd.nix;
   kernel-rust = handleTest ./kernel-rust.nix { };

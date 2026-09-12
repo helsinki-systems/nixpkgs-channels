@@ -153,6 +153,7 @@ stdenv.mkDerivation (finalAttrs: {
     maintainers = with lib.maintainers; [
       thoughtpolice
       prusnak
+      whispersofthedawn
     ];
     platforms = lib.platforms.unix;
   };

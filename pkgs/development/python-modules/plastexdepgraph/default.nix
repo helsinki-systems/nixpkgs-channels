@@ -35,6 +35,7 @@ buildPythonPackage rec {
   meta = {
     description = "PlasTeX plugin allowing to build dependency graphs";
     homepage = "https://github.com/PatrickMassot/plastexdepgraph";
+    changelog = "https://github.com/PatrickMassot/plastexdepgraph/releases/tag/${version}";
     maintainers = with lib.maintainers; [ niklashh ];
     license = lib.licenses.asl20;
   };

@@ -21,6 +21,9 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "ipopt";
   version = "3.14.20";
 
+  __structuredAttrs = true;
+  srictDeps = true;
+
   src = fetchFromGitHub {
     owner = "coin-or";
     repo = "Ipopt";
@@ -61,6 +64,7 @@ stdenv.mkDerivation (finalAttrs: {
   enableParallelBuilding = true;
 
   meta = {
+    changelog = "https://github.com/coin-or/Ipopt/releases/tag/releases%2F${finalAttrs.version}";
     description = "Software package for large-scale nonlinear optimization";
     homepage = "https://projects.coin-or.org/Ipopt";
     license = lib.licenses.epl20;

@@ -8,21 +8,14 @@
 
 mkTclDerivation (finalAttrs: {
   pname = "pgtcl";
-  version = "3.3.0";
+  version = "3.3.1";
 
   src = fetchFromGitHub {
     owner = "flightaware";
     repo = "Pgtcl";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-rvGtQRmbWnvMGfPf7azjAdeVppjthTmFLuROBKZaD+A=";
+    hash = "sha256-+1qwU5ukbaeTHoOIIj1xU9XR7AvtkHnssIcNLLFDLjY=";
   };
-
-  # Fix Tcl9 stubs build
-  # https://github.com/flightaware/Pgtcl/pull/62
-  postPatch = ''
-    substituteInPlace generic/pgtcl.c \
-      --replace-fail 'Tcl_InitStubs(interp, "8.1"' 'Tcl_InitStubs(interp, "8.1-"'
-  '';
 
   nativeBuildInputs = [
     autoreconfHook

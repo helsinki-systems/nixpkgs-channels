@@ -11,7 +11,7 @@
   plasTeX,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "plastexdepgraph";
   version = "0.0.5";
   pyproject = true;
@@ -19,7 +19,7 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     repo = "plastexdepgraph";
     owner = "PatrickMassot";
-    tag = version;
+    tag = finalAttrs.version;
     hash = "sha256-GOTQmcWrmEZ2DkAMcE1ZknLOyVorGC87+qhO8jxcGJ4=";
   };
 
@@ -35,8 +35,8 @@ buildPythonPackage rec {
   meta = {
     description = "PlasTeX plugin allowing to build dependency graphs";
     homepage = "https://github.com/PatrickMassot/plastexdepgraph";
-    changelog = "https://github.com/PatrickMassot/plastexdepgraph/releases/tag/${version}";
+    changelog = "https://github.com/PatrickMassot/plastexdepgraph/releases/tag/${finalAttrs.src.tag}";
     maintainers = with lib.maintainers; [ niklashh ];
     license = lib.licenses.asl20;
   };
-}
+})

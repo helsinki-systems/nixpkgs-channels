@@ -149,7 +149,20 @@ in
         "2270007"
       ];
       description = ''
-        List of rules that should be disabled.
+        List of matchers specifying which rules should be disabled.
+        These can be raw SID numbers or something like "group:emerging-coinminer.rules".
+      '';
+    };
+
+    dropRules = mkOption {
+      type = types.listOf types.str;
+      default = [ ];
+      example = literalExpression ''
+        [ "2274852" "4327876" "902244405" ]
+      '';
+      description = ''
+        List of matchers specifying which rules should be converted to drop rules.
+        These can be raw SID numbers or something like "group:emerging-coinminer.rules".
       '';
     };
   };
@@ -230,7 +243,8 @@ in
               ${concatStringsSep "\n" enabledSourcesCmds}
               ${python.interpreter} ${pkg}/bin/suricata-update update-sources
               ${python.interpreter} ${pkg}/bin/suricata-update update --suricata-conf ${cfg.configFile} --no-test \
-                --disable-conf ${pkgs.writeText "suricata-disable-conf" "${concatStringsSep "\n" cfg.disabledRules}"}
+                --disable-conf ${pkgs.writeText "suricata-disable-conf" "${concatStringsSep "\n" cfg.disabledRules}"} \
+                --drop-conf ${pkgs.writeText "suricata-drop.conf" "${concatStringsSep "\n" cfg.dropRules}"}
             '';
           serviceConfig = {
             Type = "oneshot";

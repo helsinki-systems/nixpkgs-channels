@@ -34,6 +34,7 @@
   lld,
   testers,
   writableTmpDirAsHomeHook,
+  bubblewrap,
 
   buildRemoteServer ? true,
 }:
@@ -230,7 +231,12 @@ rustPlatform.buildRustPackage (finalAttrs: {
         wayland
       ]
     }
-    wrapProgram $out/libexec/zed-editor --suffix PATH : ${lib.makeBinPath [ nodejs ]}
+    wrapProgram $out/libexec/zed-editor --suffix PATH : ${
+      lib.makeBinPath [
+        nodejs
+        bubblewrap # required for sandboxing
+      ]
+    }
   '';
 
   nativeCheckInputs = [

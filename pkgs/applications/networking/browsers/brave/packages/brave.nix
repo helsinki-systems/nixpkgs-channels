@@ -13,8 +13,8 @@ rec {
       sha256 = "21d7ac36b64a408dc598bb6ec3db84b07b2cbca854d26b28055a2fb5b94a2e77";
     };
     aarch64-darwin = {
-      url = "https://github.com/brave/brave-browser/releases/download/v${version}/brave-v${version}-darwin-arm64.zip";
-      sha256 = "a92bb8dafc02bd386654e0149e386c816474b7e40bdf52b1d4d9723911df08df";
+      url = "https://github.com/brave/brave-browser/releases/download/v${version}/Brave-Browser-arm64.dmg";
+      sha256 = "fdb8af6099d91ec3813c93d9cc1bcb6e59ee1b9fde97e0a94283e4ed6c5db3b5";
     };
   };
 }

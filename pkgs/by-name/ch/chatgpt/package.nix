@@ -268,6 +268,7 @@ stdenv.mkDerivation (finalAttrs: {
     maintainers = with lib.maintainers; [
       wattmto
       moraxyc
+      mdaniels5757
     ];
     broken = stdenv.hostPlatform.isMusl;
     platforms = lib.attrNames finalAttrs.passthru.sources;

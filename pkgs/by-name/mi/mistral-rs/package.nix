@@ -294,11 +294,18 @@ rustPlatform.buildRustPackage (finalAttrs: {
         [ "x86_64-linux" ]
       else
         lib.platforms.unix;
-    problems = lib.optionalAttrs mklSupport {
-      broken-mkl-support = {
-        kind = "broken";
-        message = "mistral-rs' MKL support is currently broken.";
+    problems =
+      lib.optionalAttrs mklSupport {
+        broken-mkl-support = {
+          kind = "broken";
+          message = "mistral-rs' MKL support is currently broken.";
+        };
+      }
+      // lib.optionalAttrs (cudaSupport && (cudaPackages.cudaAtLeast "13.4")) {
+        unsupported-cuda-toolkit = {
+          kind = "broken";
+          message = "mistral-rs is not compatible with CUDA ${cudaPackages.cudaMajorMinorVersion}.";
+        };
       };
-    };
   };
 })

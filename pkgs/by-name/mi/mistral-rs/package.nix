@@ -294,6 +294,11 @@ rustPlatform.buildRustPackage (finalAttrs: {
         [ "x86_64-linux" ]
       else
         lib.platforms.unix;
-    broken = mklSupport;
+    problems = lib.optionalAttrs mklSupport {
+      broken-mkl-support = {
+        kind = "broken";
+        message = "mistral-rs' MKL support is currently broken.";
+      };
+    };
   };
 })
